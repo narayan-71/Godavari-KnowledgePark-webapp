@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Openlayers -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v6.15.1/css/ol.css" />
+ 
+  <!-- ol-ext -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css" />
+  <link rel="stylesheet" href="./dict/css/style.css">
+     
+
+    
+    <title>ICIMOD Knowledge park</title>
+  </head>
+  <body>
+   
+    <div id="header" >
+      <nav class="navbar navbar-dark my-nav" >
+       
+          
+          <h2 class="text-light banner-heading" onClick="window.location.reload();">Godavari Knowledge Park </h2>
+       
+       
+        
+       
+      </nav>
+      <div id="small-nav">
+        <a class="btn btn-sm  text-light mybutton"  type="button" id="map_3d" style="background:#3CB769">3D View</a>
+        <a class="btn btn-sm  text-light mybutton"   type="button" id="comparison" style="background:transparent;" >Before After</a>
+        <a class="btn btn-sm  text-light mybutton"   type="button" id="timelapse" style="background:transparent;" >Timelapse</a>
+      
+
+      </div>
+      
+   
+      <div id="dynamic_content">
+          <div id="map" style="border: radius 3px; " ></div>
+          <video id="myVideo" height="84.5%" width="98.5%" controls disablePictureInPicture controlsList="nodownload"  style="background:black;">
+            <source src="./video/movie.mp4" type=video/mp4>
+            </video>
+      
+          <iframe id="my3d" src="https://geoapps.icimod.org/godawari3d/"  ></iframe> 
+          <!-- <object id="my3d" data="https://geoapps.icimod.org/godawari3d/"
+
+             type="text/html">
+          </object> -->
+      
+
+          
+      
+         
+
+      </div>
+    
+      
+    
+</div>
+
+<script>
+
+ 
+  
+  var inactivityTime = function () {
+    var time;
+    window.onload = resetTimer;
+     // DOM Events
+     document.onload = resetTimer;
+     document.onmousemove = resetTimer;
+     document.onmousedown = resetTimer; // touchscreen presses
+     document.ontouchstart = resetTimer;
+     document.onclick = resetTimer;     // touchpad clicks
+     document.onkeydown = resetTimer; 
+  
+
+    function logout() {
+      window.location.reload();
+    }
+
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(logout, 120000)
+        // 1000 milliseconds = 1 second
+    }
+};
+window.onload = function() {
+  inactivityTime();
+}
+
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://openlayers.org/en/v6.15.1/build/ol.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL,Object.assign"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"></script>
+<script type="module" src="./dict/js/dynamic.js"></script>
+<script type="module" src="./dict/js/map.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#myVideo").hide();
+    $("#map").hide();
+   
+});
+</script>
+
+
+
+  </body>
+</html>

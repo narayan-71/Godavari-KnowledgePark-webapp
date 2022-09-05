@@ -1,0 +1,88 @@
+
+*{
+    margin: 0;
+  }
+  
+  #dynamic_content{
+    margin: 10px;
+  }
+  #map {
+    position: fixed;
+    
+    width: 98.5vw;
+    height: 84.5vh;
+  
+  
+    
+  }
+
+
+ 
+
+ .my-nav{
+  background:#039E66;
+  
+
+  
+ }
+ body{
+  background:#3CB769;
+ }
+
+  h2{
+    cursor: pointer;
+
+ 
+    
+  }
+ 
+ 
+  /* #date{
+    
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width:100%;
+    font-weight: bold;
+    color: white;
+    z-index: 9;
+  } */
+  #small-nav{
+    height:4vh;
+    background:#267300;
+    
+  }
+  /* .btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+   */
+  .attcss{
+    margin-left: 120px;
+    text-align: center;
+    background-color: none;
+    opacity: 1;
+  }
+  #my3d{
+  
+    position: fixed;
+    width: 98.5vw;
+    height: 84.5vh;
+   
+   
+  }
+
+  video::-webkit-media-controls-fullscreen-button {
+    display: none;
+  }
+  #myVideo {
+
+    position: fixed;
+    
+    /* min-width: 100%;
+    min-height: 93vh;
+    height: auto; */
+  }
+  
